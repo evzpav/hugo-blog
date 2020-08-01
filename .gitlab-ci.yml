@@ -1,15 +1,15 @@
 stages:
-    - deploy
-    
-  variables:
-    APP_NAME: hugo-blog
-    
-  deploy:
-    stage: deploy
-    image: ilyasemenov/gitlab-ci-git-push
-    environment:
-      name: production
-    only:
-      - master
-    script:
-      - git-push ssh://dokku@$VM_IP:22/$APP_NAME
+  - deploy
+  
+variables:
+  APP_NAME: hugo-blog
+  
+deploy:
+  stage: deploy
+  image: ilyasemenov/gitlab-ci-git-push
+  environment:
+    name: production
+  only:
+    - master
+  script:
+    - git-push ssh://dokku@$VM_IP:22/$APP_NAME
