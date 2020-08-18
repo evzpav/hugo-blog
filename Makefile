@@ -1,10 +1,14 @@
+include .env
+
 NAME = $(shell basename $(CURDIR))
 PORT = 8080
 
 build-local:
+	HUGO_GoogleAnalytics=$(GOOGLE_ANALYTICS_TAG) \
 	hugo
 
 run-local:
+	HUGO_GoogleAnalytics=$(GOOGLE_ANALYTICS_TAG) \
 	hugo server -D
 
 build-nginx:
@@ -14,7 +18,6 @@ build-nginx:
 		--tag $(NAME)_nginx \
 		--build-arg HUGO_ENV_ARG="production" \
 		--build-arg HUGO_DESTINATION_ARG="/target" \
-		--build-arg HUGO_CMD="" \
 		--target=nginx \
 		--file=./Dockerfile .
 
