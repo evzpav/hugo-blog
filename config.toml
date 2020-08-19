@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://evzpav.com"
 languageCode = "en"
 title = "Evandro Pavei"
 theme = "kiss"
@@ -20,14 +20,14 @@ customCSS = ["css/custom.css"]
 [params.info]
 adsense = "" # Adsense ID (ID only, without ca-pub-)
 enableSocial = true # Adds OpenGraph and Twitter cards
-homeTitle = "Home" # Title for home page
+homeTitle = "Evandro Pavei" # Title for home page
 poweredby = true # Adds powered by hugo and kiss below Copyright
 related = true # Includes related articles at the bottom of the article
 codeCopy = true # Add copy button above code blocks
 taxonomiesCount = true # Add taxonomies count
 
 [params.features]
-disqusOnDemand = true  # Load Disqus comments on click
+disqusOnDemand = false  # Load Disqus comments on click
 
 
 [params.opengraph.facebook]
