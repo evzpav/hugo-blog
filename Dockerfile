@@ -9,8 +9,8 @@
 # ---- Hugo ----
 FROM klakegg/hugo:0.74.3 as hugo
 COPY . /src
-ARG HUGO_GoogleAnalytics
-RUN HUGO_GoogleAnalytics=$HUGO_GoogleAnalytics hugo
+ARG GOOGLE_ANALYTICS_TAG
+RUN HUGO_GoogleAnalytics=$GOOGLE_ANALYTICS_TAG hugo
 
 # ---- Nginx ----
 FROM nginx:1.18 as nginx
