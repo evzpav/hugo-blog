@@ -16,6 +16,7 @@ build-nginx:
 	docker build  \
 	 --progress=plain \
 		--tag $(NAME)_nginx \
+		--build-arg HUGO_GoogleAnalytics=$(HUGO_GoogleAnalytics) \
 		--build-arg HUGO_ENV_ARG="production" \
 		--build-arg HUGO_DESTINATION_ARG="/target" \
 		--target=nginx \
@@ -64,4 +65,18 @@ run-alpine: build-alpine
 		-p $(PORT):$(PORT) \
 		$(NAME)_alpine
 		
+	$(info running on http://localhost:$(PORT))
+
+build:
+	docker build  \
+		--tag $(NAME)_my \
+		--target=nginx \
+		--build-arg HUGO_GoogleAnalytics=321321 \
+		--file=./Dockerfile .
+
+run: build
+	docker run --rm \
+		--name $(NAME)_my \
+		-p $(PORT):80 \
+		$(NAME)_my
 	$(info running on http://localhost:$(PORT))
