@@ -10,7 +10,8 @@
 FROM klakegg/hugo:0.74.3 as hugo
 COPY . /src
 ARG GOOGLE_ANALYTICS_TAG
-RUN HUGO_GoogleAnalytics=$GOOGLE_ANALYTICS_TAG hugo
+ENV HUGO_GoogleAnalytics=${GOOGLE_ANALYTICS_TAG}
+RUN hugo
 
 # ---- Nginx ----
 FROM nginx:1.18 as nginx
