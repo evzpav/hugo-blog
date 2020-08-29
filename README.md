@@ -8,7 +8,7 @@ make run-local
 ```
 Blog will be running on [http://localhost:1313](http://localhost:1313).
 
-Buid static files, add files to Nginx dokcer image and serve via Nginx:
+Build static files, add files to Nginx docker image and serve via Nginx:
 ```bash
 make run-docker
 ```
