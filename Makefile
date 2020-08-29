@@ -1,7 +1,7 @@
 include .env
 
 NAME = $(shell basename $(CURDIR))
-PORT = 1313
+PORT = 1414
 
 build-local:
 	hugo

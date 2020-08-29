@@ -128,7 +128,7 @@ I create a `Makefile` in the root folder of the project:
 include .env
 
 NAME = $(shell basename $(CURDIR))
-PORT = 1313
+PORT = 1414
 
 build-local:
 	hugo
@@ -173,7 +173,7 @@ And to see how it would be as deployed:
 make run-docker
 ```
 
-Link to Github repository: (https://github.com/evzpav/hugo-blog)
+Link to Github repository: [hugo-blog](https://github.com/evzpav/hugo-blog)
 
 Thanks for reading!
 For questions or comments follow me on [Twitter](https://twitter.com/evzpav) and send me a direct message ;).
